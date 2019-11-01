@@ -28,4 +28,4 @@ def hello():
 p = Process(target=crawl, args=())
 p.start()
     # sleep(5)
-application.run()
+application.run(host='0.0.0.0', port=5000, debug=True)

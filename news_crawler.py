@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import datetime
+import gc
 import logging
 import traceback
 
@@ -59,6 +60,7 @@ def crawl():
                     with open('interesting_links.txt', 'a') as interesting_links:
                         print(F'TO CHECK: {article.url}', file=interesting_links)
                     print(F"\n{article.url}\n")
+                del article
             except Exception as e:
                 traceback.print_exc()
                 logging.error(e, exc_info=True)
@@ -68,6 +70,7 @@ def crawl():
             print('=' * 30 + source_url + '=' * 30, file=interesting_links)
             print(file=interesting_links)
         logging.info('=' * 30 + source_url + '=' * 30)
+        gc.collect()
 
 
 if __name__ == '__main__':
