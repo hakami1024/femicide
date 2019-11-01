@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+import os
+
+workers = int(os.environ.get('GUNICORN_PROCESSES', '3'))
+threads = int(os.environ.get('GUNICORN_THREADS', '1'))
+
+forwarded_allow_ips = '*'
+secure_scheme_headers = { 'X-Forwarded-Proto': 'https' }
+
 SOURCES = [
     '2013.csv',
     '2015.csv',
@@ -41,4 +49,4 @@ BLACK_LIST = [
     'wikipedia.org',
 ]
 
-SKIP_UNTIL = 'aif.ru'
+SKIP_UNTIL = ''

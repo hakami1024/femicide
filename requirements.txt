@@ -2,3 +2,5 @@ newspaper3k
 joblib
 tqdm
 pandas
+gunicorn
+Flask
