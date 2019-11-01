@@ -1,0 +1,1 @@
+heroku local:run python news_crawler.py
