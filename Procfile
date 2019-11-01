@@ -1,2 +1,3 @@
-heroku ps:scale worker=1
-heroku local:run python news_crawler.py
+worker: python news_crawler.py
+git push heroku master
+heroku scale worker=1
