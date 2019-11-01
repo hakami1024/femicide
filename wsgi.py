@@ -24,8 +24,8 @@ def hello():
         return '<br/>\r\n'.join(convert_links(f.read()).split('\n'))
 
 
-if __name__ == "__main__":
-    p = Process(target=crawl, args=())
-    p.start()
-    sleep(5)
-    application.run()
+# if __name__ == "__main__":
+p = Process(target=crawl, args=())
+p.start()
+    # sleep(5)
+application.run()
